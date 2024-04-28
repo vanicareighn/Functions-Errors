@@ -17,30 +17,33 @@ This code demonstrates the usage of require to validate input conditions, assert
 pragma solidity ^0.8.0;
 
 contract SmartContract {
-    address public owner;
-    uint256 public value;
+    address public owner; // Public variable to store the address of the contract owner
+    uint256 public value; // Public variable to store the value set by the owner
 
     constructor() {
-        owner = msg.sender;
+        owner = msg.sender; // Sets the contract deployer as the owner
     }
 
+    // Function to set the value, accessible externally
     function setValue(uint256 _newValue) external {
-        require(msg.sender == owner, "Caller is not the owner");
-        require(_newValue != 0, "New value cannot be zero");
-        value = _newValue;
+        require(msg.sender == owner, "Caller is not the owner"); // Checks if the caller is the owner
+        require(_newValue != 0, "New value cannot be zero"); // Ensures the new value is not zero
+        value = _newValue; // Sets the new value
     }
 
+    // Function demonstrating the assert statement
     function assertExample(uint256 _num) external pure returns (uint256) {
-        assert(_num != 0);
-        return _num;
+        assert(_num != 0); // Asserts that the input number is not zero
+        return _num; // Returns the input number
     }
 
+    // Function demonstrating the revert statement
     function revertExample(uint256 _num) external pure returns (uint256) {
         if (_num == 0) {
-            revert("Number cannot be zero");
+            revert("Number cannot be zero"); // Reverts the transaction with a custom error message if the input number is zero
         }
 
-        return _num;
+        return _num; // Returns the input number
     }
 }
 ```
