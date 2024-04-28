@@ -12,7 +12,8 @@ The first requirement to run this program is to use Remix Ethereum IDE (https://
 
 This code demonstrates the usage of require to validate input conditions, assert to verify assumptions, and revert to revert transactions with custom error messages. Through Remix Ethereum IDE, you can experiment with these functions and gain insights into their behavior in Solidity smart contracts. To test the contract, interact with the setValue function using different input values to see how the require function validates conditions. Also, try calling the assertExample and revertExample functions with various inputs to understand how assert verifies assumptions and revert handles transactions with custom error messages. Through these interactions, you can explore the functionality of the require, assert, and revert functions in the contract.
 
-``` // SPDX-License-Identifier: MIT
+```
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract SmartContract {
@@ -42,7 +43,7 @@ contract SmartContract {
         return _num;
     }
 }
-''' 
+```
 
 ## Additional Information
 
