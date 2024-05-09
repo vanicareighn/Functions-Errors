@@ -5,7 +5,7 @@ contract SmartContract {
     uint256 public value;
 
     function setValue(uint256 _newValue) external {
-        require(_newValue >= 100 && _newValue <= 5000, "Value must be between 100 and 5000");
+        require(_newValue >= 100 && _newValue <= 5000, "You can only enter up to 100 but cannot be above 5000");
         value = _newValue;
     }
 
