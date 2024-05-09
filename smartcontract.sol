@@ -10,13 +10,13 @@ contract SmartContract {
     }
 
     function assertValue(uint256 _num) external pure returns (uint256) {
-        assert(_num != 0);
+        assert(_num >= 100 && _num <=5000);
         return _num;
     }
 
     function revertValue(uint256 _num) external pure returns (uint256) {
-        if (_num == 0) {
-            revert("Value cannot be zero, Try Again");
+        if (_num >= 100 && _num <=5000) {
+            revert("Value must between 100 and 5000");
         }
 
         return _num;
